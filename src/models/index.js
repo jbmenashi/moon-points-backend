@@ -1,28 +1,27 @@
 let users = {
    1: {
       id: '1',
-      username: 'Robin Wieruch',
-   },
-   2: {
-      id: '2',
-      username: 'Dave Davids',
+      username: 'Jake M',
+      bio: 'Moon Point Commissioner'
    },
 };
 
-let messages = {
+let points = {
    1: {
       id: '1',
-      text: 'Hello World',
+      day: "7/18/19",
+      pic: "sample",
       userId: '1',
    },
    2: {
       id: '2',
-      text: 'By World',
-      userId: '2',
+      day: "7/19/19",
+      pic: "sample2",
+      userId: '1',
    },
 };
 
 export default {
    users,
-   messages,
+   points,
 };
