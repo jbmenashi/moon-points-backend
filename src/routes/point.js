@@ -15,7 +15,8 @@ router.post('/', (req, res) => {
   const id = uuidv4();
   const point = {
     id,
-    text: req.body.text,
+    day: req.body.day,
+    pic: req.body.pic,
     userId: req.context.me.id,
   };
 
