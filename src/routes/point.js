@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     id,
     day: req.body.day,
     pic: req.body.pic,
-    userId: req.context.me.id, //req.body.userId if you don't want to deal with the session
+    user: req.body.user
   };
 
   req.context.models.points[id] = point;

@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 
 import User from './user';
-import Message from './message';
+import Point from './point';
 
 const connectDb = () => {
   return mongoose.connect(process.env.DATABASE_URL);
 };
 
-const models = { User, Message };
+const models = { User, Point };
 
 export { connectDb };
 
