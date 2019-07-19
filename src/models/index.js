@@ -1,27 +1,14 @@
-let users = {
-   1: {
-      id: '1',
-      username: 'Jake M',
-      bio: 'Moon Point Commissioner'
-   },
+import mongoose from 'mongoose';
+
+import User from './user';
+import Message from './message';
+
+const connectDb = () => {
+  return mongoose.connect(process.env.DATABASE_URL);
 };
 
-let points = {
-   1: {
-      id: '1',
-      day: "7/18/19",
-      pic: "sample",
-      userId: '1',
-   },
-   2: {
-      id: '2',
-      day: "7/19/19",
-      pic: "sample2",
-      userId: '1',
-   },
-};
+const models = { User, Message };
 
-export default {
-   users,
-   points,
-};
+export { connectDb };
+
+export default models;
