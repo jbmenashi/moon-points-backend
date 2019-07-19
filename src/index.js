@@ -32,10 +32,10 @@ connectDb().then(async () => {
   if (eraseDatabaseOnSync) {
     await Promise.all([
       models.User.deleteMany({}),
-      models.Message.deleteMany({}),
+      models.Point.deleteMany({}),
     ]);
 
-    createUsersWithMessages();
+    createUsersWithPoints();
   }
 
   app.listen(process.env.PORT, () =>
@@ -43,6 +43,41 @@ connectDb().then(async () => {
   );
 });
 
-const createUsersWithMessages = async () => {
-   
+const createUsersWithPoints = async () => {
+   const user1 = new models.User({
+       username: 'Jake M',
+       bio: 'Moon Points Commish'
+   });
+
+   const user2 = new models.User({
+       username: 'Ben W',
+       bio: 'Moon Points Founder'
+   });
+
+   const point1 = new models.Point({
+      day: '6/23/19',
+      pic: 'pic1',
+      user: user1.id,
+   });
+
+   const point2 = new models.Point({
+      day: '6/28/19',
+      pic: 'pic2',
+      user: user2.id,
+   });
+
+   const point3 = new models.Point({
+      day: '7/14/19',
+      pic: 'pic3',
+      user: user2.id,
+   });
+
+   await point1.save();
+   await point2.save();
+   await point3.save();
+
+   await user1.save();
+   await user2.save();
+
+
 };

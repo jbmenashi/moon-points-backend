@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     id,
     day: req.body.day,
     pic: req.body.pic,
-    user: req.body.user
+    userId: req.context.me.id,
   };
 
   req.context.models.points[id] = point;
