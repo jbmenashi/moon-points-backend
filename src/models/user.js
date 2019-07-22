@@ -11,6 +11,19 @@ const userSchema = new mongoose.Schema({
    }
 });
 
+userSchema.statics.findByLogin = async function (login) {
+  let user = await this.findOne({
+    username: login,
+  });
+
+  if (!user) {
+    user = await this.findOne({ email: login });
+  }
+
+  return user;
+};
+
+
 userSchema.pre('remove', function(next) {
   this.model('Point').deleteMany({ user: this._id }, next);
 });
