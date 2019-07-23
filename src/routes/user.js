@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
       bio: req.body.bio
    });
 
-   return res.send(point);
+   return res.send(user);
 });
 
 export default router;
