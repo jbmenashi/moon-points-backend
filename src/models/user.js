@@ -1,14 +1,9 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-   username: {
-      type: String,
-      unique: true,
-   },
-   bio: {
-      type: String,
-      required: true
-   }
+   username: String,
+   bio: String,
+   points: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Point' }],
 });
 
 userSchema.statics.findByLogin = async function (login) {

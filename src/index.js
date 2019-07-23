@@ -72,12 +72,14 @@ const createUsersWithPoints = async () => {
       user: user2.id,
    });
 
+   await user1.save();
+   await user2.save();
+   
    await point1.save();
    await point2.save();
    await point3.save();
 
-   await user1.save();
-   await user2.save();
+
 
 
 };
